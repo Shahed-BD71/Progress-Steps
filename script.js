@@ -10,7 +10,7 @@ let currentActive = 1;
 next.addEventListener("click", () => {
   currentActive++;
   if (currentActive > circles.length) {
-    currentActive = currentActive.length;
+    currentActive = circles.length;
   }
   update();
 });
@@ -34,7 +34,6 @@ const update = () => {
   const actives = document.querySelectorAll(".active");
   progress.style.width =
     ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
-
   if (currentActive === 1) {
     prev.disabled = true;
   } else if (currentActive === circles.length) {
